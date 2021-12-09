@@ -14,7 +14,7 @@ def check_markup(user_name, user_id, videoid):
                 callback_data=f"playlist_check {user_id}|Personal|{videoid}",
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Close Menu", callback_data="close")],
+        [InlineKeyboardButton(text="🗑 اغلاق القائمة", callback_data="close")],
     ]
     return buttons
 
@@ -23,7 +23,7 @@ def playlist_markup(user_name, user_id, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Group's Playlist",
+                text=f"قائمة تشغيل المجموعة",
                 callback_data=f"show_genre {user_id}|Group|{videoid}",
             ),
             InlineKeyboardButton(
@@ -31,7 +31,7 @@ def playlist_markup(user_name, user_id, videoid):
                 callback_data=f"show_genre {user_id}|Personal|{videoid}",
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Close Menu", callback_data="close")],
+        [InlineKeyboardButton(text="🗑 اغلاق القائمة", callback_data="close")],
     ]
     return buttons
 
