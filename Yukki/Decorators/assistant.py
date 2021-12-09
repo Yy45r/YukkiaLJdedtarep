@@ -12,7 +12,7 @@ def AssistantAdd(mystic):
             b = await app.get_chat_member(message.chat.id, ASSID)
             if b.status == "kicked":
                 return await message.reply_text(
-                    f"Assistant Account[{ASSID}] is banned.\nUnban it first to use Music Bot\n\nUsername: @{ASSUSERNAME}"
+                    f"تم حظر حساب المساعد[{ASSID}] قم بالغاء حظره اولا.\n واضافته الى المجموعة يدويا او اطلب من المطور اضافته لك\n\nمعرف المساعد: @{ASSUSERNAME}"
                 )
         except UserNotParticipant:
             if message.chat.username:
