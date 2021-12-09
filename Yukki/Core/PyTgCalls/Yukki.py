@@ -74,7 +74,7 @@ async def stream_end_handler(_, update: Update):
             if str(finxx) != "raw":
                 mystic = await app.send_message(
                     chat_id,
-                    "**Playlist Function**\n\n__Downloading Next Music From Playlist....__",
+                    "**وظيفة قائمة التشغيل**\n\n__تنزيل الموسيقى التالية من قائمة التشغيل....__",
                 )
                 (
                     title,
@@ -83,7 +83,7 @@ async def stream_end_handler(_, update: Update):
                     thumbnail,
                 ) = get_yt_info_id(afk)
                 mystic = await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+                    f"**{MUSIC_BOT_NAME} تنزيل**\n\n**عنوان:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
                 )
                 loop = asyncio.get_event_loop()
                 downloaded_file = await loop.run_in_executor(
@@ -115,7 +115,7 @@ async def stream_end_handler(_, update: Update):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"🎥<b>__Started Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={afk}) \n👤**__Requested by:__** {mention}"
+                        f"🎥<b>__تم التنزيل بنجاح:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={afk}) \n👤**__طلب من:__** {mention}"
                     ),
                 )
                 os.remove(thumb)
@@ -156,7 +156,7 @@ async def stream_end_handler(_, update: Update):
                     chat_id,
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"🎥<b>__Started Playing:__</b> {title} \n👤<b>__Requested by:__ </b> {mention}",
+                    caption=f"🎥<b>__تم التنزيل بنجاح:__</b> {title} \n👤<b>__طلب من:__ </b> {mention}",
                 )
             await start_timer(
                 videoid,
